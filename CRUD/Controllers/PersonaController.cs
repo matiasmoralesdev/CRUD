@@ -71,11 +71,11 @@ namespace CRUD.Controllers
         }
 
         [HttpGet]
-        public ActionResult Borrar(int dni)
+        public ActionResult Borrar(int Dni)
         {
             using(dbEntities db = new dbEntities())
             {
-                var personaTabla = db.Persona.Find(dni);
+                var personaTabla = db.Persona.Find(Dni);
                 db.Persona.Remove(personaTabla);
                 db.SaveChanges();
             }
