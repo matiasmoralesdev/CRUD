@@ -1,0 +1,41 @@
+﻿@model List<CRUD.Models.ViewModels.ListPersonaViewModel>
+@{
+    ViewBag.Title = "Persona";
+}
+
+<div style="text-align:center;font-size:30px">
+    <h2>@ViewBag.Title</h2>
+</div>
+
+<div style="text-align:center">
+    <a href="~/Persona/Nuevo" class="btn btn-primary">AGREGAR PERSONA</a>
+</div>
+<br />
+<div class="row" style="text-align:center">
+    <div class="col-md-12" align="center">
+        <table class="table">
+
+            <tr>
+                <th>DNI</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th></th>
+
+            </tr>
+
+
+            @foreach (var person in Model)
+            {
+                <tr>
+                    <td>@person.Dni</td>
+                    <td>@person.Nombre</td>
+                    <td>@person.Email</td>
+                    <td>
+                        <a href="~/Persona/Editar/@person.Dni" class="btn btn-default">EDITAR</a>
+                        <a class="btn btn-danger" href="~/Persona/Borrar/@person.Dni" >BORRAR</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
